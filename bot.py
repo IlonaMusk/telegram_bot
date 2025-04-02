@@ -1,4 +1,5 @@
 #!/usr/local/bin/python3
+import os
 import time
 import asyncio
 from selenium import webdriver
@@ -11,7 +12,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 # Telegram токен и ID чата (замени на свои)
 TELEGRAM_TOKEN = os.getenv("BOT_TOKEN")
-CHAT_ID = os.getenv("CHAT_ID")
+CHAT_ID        = os.getenv("CHAT_ID")
 
 bot = Bot(token=TELEGRAM_TOKEN)
 dp = Dispatcher()
@@ -52,7 +53,7 @@ async def check_dates():
             print("Нет свободных дат")
         else:
             print("Есть свободные даты!")
-            await bot.send_message(CHAT_ID, "🔔 Свободные даты появились! Проверь сайт!")
+            await bot.send_message(CHAT_ID, "🔔 Свободные даты появились! Проверь сайт -> https://rezerwacja.gdansk.uw.gov.pl:8445/qmaticwebbooking/#/")
 
     except Exception as e:
         print(f"Ошибка: {e}")
