@@ -24,7 +24,7 @@ async def check_dates():
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
     
-    chrome_driver_path = "/opt/homebrew/bin/chromedriver"  # Укажи свой путь
+    chrome_driver_path = "/usr/bin/chromedriver"  # Укажи свой путь
     service = Service(chrome_driver_path)
 
     driver = webdriver.Chrome(service=service, options=options)
